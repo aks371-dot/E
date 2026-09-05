@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steal a Egg Script | Delta Executor Hub</title>
+    <style>
+        :root {
+            --bg-color: #0f0f13;
+            --card-bg: #181820;
+            --accent-color: #00ea90;
+            --text-color: #f0f0f5;
+            --text-muted: #a0a0b0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(0, 234, 144, 0.15);
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .code-box {
+            background-color: #0b0b0e;
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        pre {
+            overflow-x: auto;
+            max-height: 200px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #d4d4d4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .instructions {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Steal a Egg Script Hub</h1>
+            <span class="badge">Optimizado para Delta Executor</span>
+        </header>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Auto-Farm Vuelo</h3>
+                <p>Detecta y se desplaza hacia las mejores zonas de forma fluida.</p>
+            </div>
+            <div class="feature-card">
+                <h3>God Mode</h3>
+                <p>Previene la muerte desactivando la verificación del cliente.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Menú Personalizado</h3>
+                <p>Interfaz nativa fluida con botón flotante movible.</p>
+            </div>
+        </div>
+
+        <div class="code-box">
+            <pre id="scriptCode">loadstring(game:HttpGet("https://raw.githubusercontent.com/TU_USUARIO/TU_REPOSITY/main/script.lua"))()</pre>
+        </div>
+
+        <button class="copy-btn" id="copyBtn" onclick="copyScript()">Copiar Script al Portapapeles</button>
+
+        <div class="instructions">
+            <strong>¿Cómo usar en Delta?</strong>
+            <ol>
+                <li>Haz clic en el botón de arriba para copiar el script.</li>
+                <li>Abre Roblox e inicia <strong>Steal a Egg</strong>.</li>
+                <li>Abre el menú de <strong>Delta Executor</strong>.</li>
+                <li>Pega el código en el ejecutor y presiona <strong>Execute</strong>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function copyScript() {
+            const codeText = document.getElementById("scriptCode").innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                const btn = document.getElementById("copyBtn");
+                btn.innerText = "¡Copiado con Éxito!";
+                btn.style.backgroundColor = "#ffffff";
+                btn.style.color = "#000000";
+                setTimeout(() => {
+                    btn.innerText = "Copiar Script al Portapapeles";
+                    btn.style.backgroundColor = "var(--accent-color)";
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
